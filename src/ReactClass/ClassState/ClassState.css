@@ -1,0 +1,13 @@
+.classstate-component {
+    background-color: black;
+    height: 100vh;
+    color: white;
+}
+
+.hien {
+    display: block;
+}
+
+.an {
+    display: none;
+}

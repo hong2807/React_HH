@@ -1,7 +1,8 @@
 import React from 'react'
-import './DatabindingF.css'
+import './FuncDatabinding.css'
 
-export default function DatabindingF() {
+export default function FuncDatabinding() {
+    // Biến
     let hoTen = 'Nguyen Van A';
     let email =  "nguyena@gmail.com";
     let sodienthoai =  "0124.368.759";
@@ -9,6 +10,7 @@ export default function DatabindingF() {
     let lop = "CKE1113";
     let mssv = "15";
 
+    // Hàm gọi ra không cần có sự kiện
     const renderThongTinSinhVien = () => {
         return (
             <ul>
@@ -19,8 +21,13 @@ export default function DatabindingF() {
         )
     }
 
+    // Hàm chỉ dc gọi ra khi có sự kiện
+    const thongBao = () => {
+        alert("Xin chào bạn !");
+    }
+
     return (
-        <div className="databindingf-component">
+        <div className="funcdatabinding-component">
             <div className="container">
                 <ul>
                     <li>Họ tên: {hoTen}</li>
@@ -29,6 +36,8 @@ export default function DatabindingF() {
                 </ul>
                 <br></br>
                 {renderThongTinSinhVien()}
+
+                <button className="btn btn-success" onClick={thongBao}>Click me</button>
             </div>
         </div>
     )

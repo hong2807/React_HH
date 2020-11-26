@@ -1,0 +1,12 @@
+.classdatabinding-component {
+    background-color: black;
+    height: 100vh;
+    color: white;
+    font-size: 20px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

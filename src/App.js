@@ -1,10 +1,18 @@
 import './App.css';
-import DatabindingF from './ReactFunction/DatabindingF/DatabindingF';
+import ClassDatabinding from './ReactClass/ClassDatabinding/ClassDatabinding';
+import ClassState from './ReactClass/ClassState/ClassState';
+import FuncDatabinding from './ReactFunction/FuncDatabinding/FuncDatabinding';
+
 
 function App() {
   return (
     <div className="App">
-        <DatabindingF></DatabindingF>
+      {/* Databinding */}
+          {/* <FuncDatabinding></FuncDatabinding> */}
+          {/* <ClassDatabinding></ClassDatabinding> */}
+
+      {/* State */}
+          <ClassState></ClassState>
     </div>
   );
 }
