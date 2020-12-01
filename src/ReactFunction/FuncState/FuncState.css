@@ -1,0 +1,13 @@
+.funcstate-component {
+    background-color: darkseagreen;
+    height: 100vh;
+    color: black;
+}
+
+.hien {
+    display: block;
+}
+
+.an {
+    display: none;
+}
