@@ -2,8 +2,15 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
 class ClassMapDispatchToProps extends Component {
+
+    productList = [
+        {maSP:1, tenSP:'Iphone', hinhAnh:'./iphone_xs.jpg', giaTien:1000},
+        {maSP:2, tenSP:'Samsung', hinhAnh:'./samsung.jpg', giaTien:5000},
+        {maSP:3, tenSP:'Xiaomi', hinhAnh:'./xiaomi.jpg', giaTien:200},
+    ]
+
     renderDanhSachSanPham = () => {
-        return this.props.danhSachSanPham.map((item,index) => {
+        return this.productList.map((item,index) => {
             console.log('item', item)
             return  <div className="col-4" key={index}>
                         <div className='card'>
@@ -18,6 +25,23 @@ class ClassMapDispatchToProps extends Component {
             })
         }
 
+    renderDanhSachDuocChon = () => {
+        console.log(this.props.productsSelected)
+        return this.props.productsSelected.map((item,index) => {
+            return  <div className="row">
+                        <div className="col-2">
+                            <img className='w-100' src={item.hinhAnh} alt=''/>
+                        </div>
+                        <div className="col-10 text-left">
+                            <h4>{item.tenSP}</h4>
+                            <p>{item.giaTien}</p>
+                        </div>
+                    </div>
+            })
+        }
+
+    
+
     render() {
         return (
             <div>
@@ -27,33 +51,27 @@ class ClassMapDispatchToProps extends Component {
                         {this.renderDanhSachSanPham()}
                     </div>
                     <h3 className="text-danger">Danh sách sản phẩm đã chọn</h3>
-                    <div className="row">
-                        <div className="col-2">
-                            <img className="w-100" src="xiaomi.jpg"/>
-                        </div>
-                        <div className="col-10 text-left">
-                            <h4>Iphone</h4>
-                            <p>1000</p>
-                        </div>
-                    </div>
+                        {this.renderDanhSachDuocChon()}
                 </div>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => { // stateDSSP chính là rootReducer
+const mapStateToProps = (state) => {
+   
     return {
-        danhSachSanPham: state.GioHangReducer.productList
+        productsSelected: state.GioHangReducer.shoppingCart
     }
 }
+
 
 const mapDispatchToProps = (dispatch) => { // tạo ra 1 phương thức props (themSanPham)
     return {
         themSanPham: (sanPham) => {
             const spDuocChon = {
                 maSP: sanPham.maSP,
-                tenSP: sanPham.maSP,
+                tenSP: sanPham.tenSP,
                 hinhAnh: sanPham.hinhAnh,
                 giaTien: sanPham.giaTien,
             }
@@ -63,6 +81,7 @@ const mapDispatchToProps = (dispatch) => { // tạo ra 1 phương thức props (
                 productSelected: spDuocChon
             }
             console.log(action);
+            // Chỗ này coi dc khi mình click mình sẽ gửi dữ liệu gì lên
             dispatch(action);
         }
     }

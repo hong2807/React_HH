@@ -59,7 +59,7 @@ class ClassMapStateToProps extends Component {
     }
 }
 
-const mapStateToProps = (state) => { // stateDSSP chính là rootReducer
+const mapStateToProps = (state) => { // state chính là rootReducer (state này tùy ý đặt tên)
     return {
         danhSachSanPham: state.SanPhamReducer.productList
     }
