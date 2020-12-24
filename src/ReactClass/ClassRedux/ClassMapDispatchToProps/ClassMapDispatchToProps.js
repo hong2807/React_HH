@@ -28,7 +28,7 @@ class ClassMapDispatchToProps extends Component {
     renderDanhSachDuocChon = () => {
         console.log(this.props.productsSelected)
         return this.props.productsSelected.map((item,index) => {
-            return  <div className="row">
+            return  <div className="row" key={index}>
                         <div className="col-2">
                             <img className='w-100' src={item.hinhAnh} alt=''/>
                         </div>

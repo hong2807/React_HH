@@ -9,6 +9,7 @@ import ClassBTDanhSachSanPham from './ReactClass/ClassRedux/ClassMapStateToProps
 import ClassMapStateToProps from './ReactClass/ClassRedux/ClassMapStateToProps/ClassMapStateToProps';
 import FuncUseSelector from './ReactFunction/FuncRedux/FuncUseSelector/FuncUseSelector';
 import ClassMapDispatchToProps from './ReactClass/ClassRedux/ClassMapDispatchToProps/ClassMapDispatchToProps';
+import FuncUseDispatch from './ReactFunction/FuncRedux/FuncUseDispatch/FuncUseDispatch';
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
       {/* Redux */}
           {/* <ClassMapStateToProps></ClassMapStateToProps> */}
           {/* <FuncUseSelector></FuncUseSelector> */}
-          <ClassMapDispatchToProps></ClassMapDispatchToProps>
+          {/* <ClassMapDispatchToProps></ClassMapDispatchToProps> */}
+          <FuncUseDispatch></FuncUseDispatch>
     </div>  
   );
 }
