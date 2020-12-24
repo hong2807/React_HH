@@ -8,9 +8,7 @@ export default function FuncUseDispatch() {
         {maSP:3, tenSP:'Xiaomi', hinhAnh:'./xiaomi.jpg', giaTien:200},
     ]
 
-    const [productSelected,setProductSelected] = useState([
-        {maSP: '', tenSP:'', hinhAnh:'', giaTien:''},
-    ])
+    const [productSelected,setProductSelected] = useState([])
 
     // const handleSelectProduct = (sp) => {
     //     setProductSelected({
@@ -23,22 +21,28 @@ export default function FuncUseDispatch() {
     // }
 
     const handleSelectProduct = (sp) => {
-        console.log(sp, sp.maSP)
-        setProductSelected({
+        console.log(sp, sp.maSP);
+        const newList = [
             ...productSelected,
+            {
             maSP: sp.maSP,
             tenSP: sp.tenSP,
             hinhAnh: sp.hinhAnh,
             giaTien: sp.giaTien,
-        })
-        console.log(productSelected);
-        let spDuocChon = {...productSelected}
+            }
+        ];
+        
+        setProductSelected(newList)
+        console.log(newList);
+        // let spDuocChon = {...productSelected}
         let action = {
             type: 'THEM_SAN_PHAM',
-            productSelected: spDuocChon
+            productSelected: newList
         }
         dispatch(action)
     }
+
+    console.log('after', productSelected);
 
     let dispatch = useDispatch();
 
